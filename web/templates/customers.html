@@ -1,0 +1,28 @@
+{{ define "customers" }}
+<!doctype html><html><head><meta charset="utf-8"><title>Customers</title></head>
+<body>
+  <h1>Customers</h1>
+  <form method="get">
+    <input name="q" value="{{ .q }}" placeholder="Search name/phone" />
+    <button>Search</button>
+  </form>
+  <hr/>
+  <form method="post">
+    <input name="FullName" placeholder="Full name" />
+    <input name="Phone" placeholder="Phone" />
+    <input name="Email" placeholder="Email" />
+    <input name="Address" placeholder="Address" />
+    <input name="DateOfBirth" placeholder="YYYY-MM-DD" />
+    <input name="DriverLicense" placeholder="Driver License #" />
+    <button>Add</button>
+  </form>
+  <table>
+    <thead><tr><th>Code</th><th>Name</th><th>DOB</th><th>Phone</th><th>DL</th><th>Address</th></tr></thead>
+    <tbody>
+      {{ range .customers }}
+      <tr><td>{{.Code}}</td><td>{{.FullName}}</td><td>{{.DateOfBirth}}</td><td>{{.Phone}}</td><td>{{.DriverLicense}}</td><td>{{.Address}}</td></tr>
+      {{ end }}
+    </tbody>
+  </table>
+</body></html>
+{{ end }}
