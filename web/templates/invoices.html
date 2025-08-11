@@ -1,0 +1,24 @@
+{{ define "invoices" }}
+<!doctype html><html><head><meta charset="utf-8"><title>Invoices</title></head>
+<body>
+  <h1>Create Invoice</h1>
+  <form method="post" action="/invoices">
+    <input name="customer_id" placeholder="Customer ID" />
+    <input name="weight_lbs" placeholder="Weight (lbs)" />
+    <textarea name="notes" placeholder="Notes"></textarea>
+
+    <fieldset style="border:1px solid #ccc;padding:8px"><legend>Money Transfer</legend>
+      <select name="currency">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+      </select>
+      <input name="transfer_amount" placeholder="Amount to send" />
+      <input name="transfer_fee" placeholder="Transfer fee" />
+      <input name="total_recipient" placeholder="Total for recipient" />
+      <input name="invoice_date" placeholder="YYYY-MM-DD" />
+      <textarea name="bank_info_vn" placeholder="VN Bank info (Bank name, Branch, Account name/number)"></textarea>
+    </fieldset>
+    <button>Save & Print</button>
+  </form>
+</body></html>
+{{ end }}
