@@ -1,0 +1,11 @@
+{{ define "login" }}
+<!doctype html><html><head><meta charset="utf-8"><title>Login</title></head>
+<body>
+  <h1>Admin Login</h1>
+  {{ if .error }}<div style="color:red">{{ .error }}</div>{{ end }}
+  <form method="post">
+    <input name="password" type="password" placeholder="Password" />
+    <button>Login</button>
+  </form>
+</body></html>
+{{ end }}
